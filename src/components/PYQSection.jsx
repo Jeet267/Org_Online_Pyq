@@ -1,29 +1,30 @@
 import { useNavigate } from 'react-router-dom';
+// imort AKU_logo from 
 
 export default function PYQSection() {
   const navigate = useNavigate(); 
 
   const subjects = [
-    { name: 'DSA', weight: 19 },
-    { name: 'Computer Networks', weight: 7 },
-    { name: 'DBMS', weight: 8 },
-    { name: 'Backend', weight: 7 },
-    { name: 'CS', weight: 10 },
-    { name: 'English', weight: 5 },
-    { name: 'Frontend', weight: 4 },
-    { name: 'Math', weight: 5 },
-    { name: 'OOPS', weight: 2 },
+    { name: 'Aryabhatta Knowledge University (AKU)', logo: '/Logo/AKU_logo.png' },
+    { name: 'Patliputra University (PPU)', logo: '/Logo/Patliputra_University.svg.png' },
+    { name: 'Patna University', logo: '/Logo/Patna_Uni_logo.jpeg' },
+    { name: 'Nalanda Open University', logo: '/Logo/Nalanda_Uni_logo.png' },
+    { name: 'Magadh University', logo: '/Logo/Magadh_University_logo.jpg' },
+    { name: 'Lalit Narayan Mithila University', logo: '/Logo/Lalit_logo.jpg' },
+    { name: 'Veer Kunwar Singh University', logo: '/Logo/veer_logo.jpeg' },
+    { name: 'Jai Prakash University', logo: '/Logo/jai_logo.avif' },
+    { name: 'Bhupendra Narayan Mandal University', logo: '/Logo/bhu_logo.jpeg' }
   ];
 
   return (
     <section className="py-12 px-4 bg-white">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
 
-
+        {/* Sidebar Filters */}
         <div className="col-span-1 space-y-6">
           <input
             type="text"
-            placeholder="Search subjects..."
+            placeholder="Search University..."
             className="w-full px-4 py-2 border border-gray-300 rounded-md"
           />
           <select className="w-full px-4 py-2 border border-gray-300 rounded-md">
@@ -36,22 +37,24 @@ export default function PYQSection() {
           </button>
         </div>
 
-
+        {/* Subject Cards */}
         <div className="col-span-1 md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {subjects.map((subj, idx) => (
             <div
               key={idx}
-              className="border border-gray-200 rounded-lg p-4 shadow hover:shadow-md transition"
+              className="border border-gray-200 rounded-lg p-4 shadow hover:shadow-md transition text-center"
             >
+              <img
+                src={subj.logo}
+                alt={`${subj.name} logo`}
+                className="h-16 w-auto mx-auto object-contain mb-3"
+              />
               <h3 className="text-lg font-semibold text-gray-800">{subj.name}</h3>
-              <p className="text-sm text-gray-500">Weight: {subj.weight}</p>
-
-
               <button
                 className="mt-2 text-sm text-blue-600 hover:underline"
                 onClick={() => navigate(`/pyqs/${encodeURIComponent(subj.name)}`)}
               >
-                View PYQs
+                View Course
               </button>
             </div>
           ))}

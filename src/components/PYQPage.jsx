@@ -5,18 +5,17 @@ export default function PYQPage() {
   const navigate = useNavigate(); 
 
   const companies = [
-    'Google',
-    'Microsoft',
-    'Apple',
-    'Uber',
-    'Tekion',
-    'Amazon',
+    'BCA',
+    'BBA',
+    'MCA',
+    'B-ED',
+    'BDS',
     'BNY',
-    'Tower Research',
-    'Meta',
-    'Adobe',
-    'Oracle',
-    'Code Nation'
+    'BHS',
+    'MSC',
+    'BCOM',
+    'BBE',
+    'BAMS'
   ];
 
   return (
