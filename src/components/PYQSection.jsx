@@ -1,8 +1,7 @@
 import { useNavigate } from 'react-router-dom';
-// imort AKU_logo from 
 
 export default function PYQSection() {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const subjects = [
     { name: 'Aryabhatta Knowledge University (AKU)', logo: '/Logo/AKU_logo.png' },
@@ -17,7 +16,7 @@ export default function PYQSection() {
   ];
 
   return (
-    <section className="py-12 px-4 bg-white">
+    <section className="py-12 px-4 bg-[#FFEFD5] text-[#5C4033]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
 
         {/* Sidebar Filters */}
@@ -25,14 +24,14 @@ export default function PYQSection() {
           <input
             type="text"
             placeholder="Search University..."
-            className="w-full px-4 py-2 border border-gray-300 rounded-md"
+            className="w-full px-4 py-2 border border-[#5C4033] rounded-md text-[#5C4033] placeholder:text-[#5C4033]"
           />
-          <select className="w-full px-4 py-2 border border-gray-300 rounded-md">
-            <option value="">Filter by category</option>
-            <option value="core">Core</option>
-            <option value="elective">Elective</option>
+          <select className="w-full px-4 py-2 border border-[#5C4033] rounded-md text-[#5C4033]">
+            <option value="" className="text-[#5C4033]">Filter by category</option>
+            <option value="core" className="text-[#5C4033]">Core</option>
+            <option value="elective" className="text-[#5C4033]">Elective</option>
           </select>
-          <button className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">
+          <button className="w-full bg-[#5C4033] text-[#FFEFD5] py-2 rounded-md hover:bg-[#4a3328] transition">
             Sort by Weight
           </button>
         </div>
@@ -42,16 +41,16 @@ export default function PYQSection() {
           {subjects.map((subj, idx) => (
             <div
               key={idx}
-              className="border border-gray-200 rounded-lg p-4 shadow hover:shadow-md transition text-center"
+              className="border border-[#5C4033] rounded-lg p-4 shadow hover:shadow-md transition text-center"
             >
               <img
                 src={subj.logo}
                 alt={`${subj.name} logo`}
                 className="h-16 w-auto mx-auto object-contain mb-3"
               />
-              <h3 className="text-lg font-semibold text-gray-800">{subj.name}</h3>
+              <h3 className="text-lg font-semibold">{subj.name}</h3>
               <button
-                className="mt-2 text-sm text-blue-600 hover:underline"
+                className="mt-2 text-sm text-[#5C4033] hover:underline hover:bg-[#FFEFD5] hover:text-[#5C4033]"
                 onClick={() => navigate(`/pyqs/${encodeURIComponent(subj.name)}`)}
               >
                 View Course
